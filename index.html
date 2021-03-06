@@ -1,0 +1,68 @@
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+</head>
+<div id="header"></div>
+<div class="left"></div>
+<div class="stuff">
+  <br><br>
+  <h1>Resume</h1>
+  <h2>Fred Hoskyns</h2>
+  <hr />
+  <br>
+  <p class="head">Work Experience</p>
+  <ul>
+    <li>AWS - 2020-present</li>
+    <li>Amazon - 2017-2020</li>
+    <li>Blue Oil Energy - 2015-2017</li>
+  </ul>
+  <br>
+  <p class="head">Education</p>
+  <ul>
+    <a href="https://www.ucl.ac.uk">
+      <li>University College London - BA French & Italian</li>
+    </a>
+    <!--Link-->
+    <a href="https://www.sorbonne-universite.fr">
+      <li>Univeristé Paris Sorbonne</li>
+    </a>
+    <li>Graveney School</li>
+  </ul>
+  <br>
+  <p class="head">Skills & Certifications</p>
+  <ul>
+    <li>Excel Advanced</li>
+    <li>SQL Intermediate</li>
+    <li>AWS Solutions Architect Professional</li>
+    <li>AWS DevOps Engineer Professional</li>
+  </ul>
+  <br>
+  <p class="head">Interests</p>
+  <ul>
+    <li>Cloud Computing</li>
+    <li>Macroeconomics</li>
+    <li>Football</li>
+    <li>Literature</li>
+  </ul>
+</div>  
+  <p>This page was viewed</p>
+  <h1 id="count"></h1>
+  <p>times</p>
+</div>
+<div class="right"></div>
+<div id="footer">
+  <h2 id="name">Fred Hoskyns7</h2></div>
+
+
+  <script>
+    const countEl = document.getElementById('count');
+
+    updateVisitCount();
+  
+    function updateVisitCount() {
+      fetch('https://b9hsa93hif.execute-api.eu-west-2.amazonaws.com/Prod/hello/')
+      .then(res => res.json())
+      .then(res => {
+        countEl.innerHTML = res.clicks;
+      })
+  }
+  </script>
